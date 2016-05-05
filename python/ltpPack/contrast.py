@@ -20,16 +20,18 @@ def contrastNewAndOldSegmentResult(oldResultPath, newResultPath, contrastResultP
     input2_cont = input2_fd.readlines()
     for (line1, line2) in zip(input1_cont, input2_cont):
         # split lines
-        list1 = re.split(r'[\s]+', line1)
-        list2 = re.split(r'[\s]+', line2)
+        list1 = re.split(r'\t', line1)
+        list2 = re.split(r'\t', line2)
         # print list1
         # print list2
         # store all length of lines
         all_len1 = 0
+        all_len2 = 0
         line_len_diff = 0
         for item in list1:
             all_len1 += len(item)
-        all_len2 = all_len1
+        for item in list2:
+            all_len2 += len(item)
         # store the current length
         len1 = 0
         len2 = 0
@@ -43,18 +45,20 @@ def contrastNewAndOldSegmentResult(oldResultPath, newResultPath, contrastResultP
         diff_flag = False
         len1 += len(list1[index1])
         len2 += len(list2[index2])
-        while (len1 < all_len1) & (len2 < all_len2):
+        while (index1 < len(list1)) & (index1 < len(list2)):
             # print len1,len2
             if len1 < len2:
                 # extend lesser list
                 len1 += len(list1[index1])
                 list1_buff.append(list1[index1])
                 index1 += 1
+                diff_flag = True
             elif len1 > len2:
                 # extend lesser list
                 len2 += len(list2[index2])
                 list2_buff.append(list2[index2])
                 index2 += 1
+                diff_flag = True
             else:
                 # correspond word is different
                 if diff_flag:  # diff
