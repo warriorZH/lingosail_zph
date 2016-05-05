@@ -5,4 +5,3 @@ line percentage 60.000000%
 柔软物体	------	柔软	物体	
 以	避免	------	以避	免	
 line percentage 50.000000%
-git@github.com:warriorZH/lingosail_zph.git
