@@ -45,14 +45,14 @@ def contrastNewAndOldSegmentResult(oldResultPath, newResultPath, contrastResultP
             # print len1,len2
             if len1 < len2:
                 # extend lesser list
-                index1 += 1
                 len1 += len(list1[index1])
                 list1_buff.append(list1[index1])
+                index1 += 1
             elif len1 > len2:
                 # extend lesser list
-                index2 += 1
                 len2 += len(list2[index2])
                 list2_buff.append(list2[index2])
+                index2 += 1
             else:
                 # correspond word is different
                 if diff_flag:  # diff
