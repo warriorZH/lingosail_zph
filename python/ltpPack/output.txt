@@ -1,0 +1,8 @@
+是	中国	------	是中	国	
+line percentage 60.000000%
+天	真好	------	天真	好	
+尽量	------	尽	量	
+柔软物体	------	柔软	物体	
+以	避免	------	以避	免	
+line percentage 50.000000%
+git@github.com:warriorZH/lingosail_zph.git
