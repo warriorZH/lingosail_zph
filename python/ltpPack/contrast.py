@@ -41,6 +41,8 @@ def contrastNewAndOldSegmentResult(oldResultPath, newResultPath, contrastResultP
         list2_buff = []
         # sign the different condition state start or end
         diff_flag = False
+        len1 += len(list1[index1])
+        len2 += len(list2[index2])
         while (len1 < all_len1) & (len2 < all_len2):
             # print len1,len2
             if len1 < len2:
@@ -57,6 +59,8 @@ def contrastNewAndOldSegmentResult(oldResultPath, newResultPath, contrastResultP
                 # correspond word is different
                 if diff_flag:  # diff
                     # print "diff"
+                    list1_buff.append(list1[index1])
+                    list2_buff.append(list2[index2])
                     output_line = ""
                     for item in list1_buff:
                         output_line += item + '\t'
@@ -78,8 +82,8 @@ def contrastNewAndOldSegmentResult(oldResultPath, newResultPath, contrastResultP
                         len2 += len(list2[index2])
                         if len1 != len2:
                             diff_flag = True
-                            list1_buff.append(list1[index1])
-                            list2_buff.append(list2[index2])
+                            # list1_buff.append(list1[index1])
+                            # list2_buff.append(list2[index2])
                     else:
                         output_line = 'line percentage %f%%' % (100 * line_len_diff / all_len1)
                         output_fd.write(output_line)
@@ -96,8 +100,8 @@ def contrastNewAndOldSegmentResult(oldResultPath, newResultPath, contrastResultP
                         len2 += len(list2[index2])
                         if len1 != len2:
                             diff_flag = True
-                            list1_buff.append(list1[index1])
-                            list2_buff.append(list2[index2])
+                            # list1_buff.append(list1[index1])
+                            # list2_buff.append(list2[index2])
                     else:
                         output_line = 'line percentage %f%%' % (100 * line_len_diff / all_len1)
                         output_fd.write(output_line)
