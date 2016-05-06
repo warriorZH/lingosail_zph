@@ -1,11 +1,19 @@
 # -*- coding: UTF-8 -*-
-
+"""
+@filename: contrast.py
+@description: contrast two word segment result, and output the result to a file.
+                word segment result interval by \t
+@author: lingosail-zhangpeihua
+@data: 2016-5-5
+@log: 1.used for optimize ltp-otcws using
+"""
 import re
 import sys
 
 
 def contrastNewAndOldSegmentResult(oldResultPath, newResultPath, contrastResultPath):
     """
+    :description contrast two word segment result, and output the result to a file.
     :param oldResultPath: segment result of old crf model
     :param newResultPath: segment result of new crf model
     :param contrastResultPath: store the contrast result of new and old segment result
@@ -171,8 +179,8 @@ def contrastNewAndOldSegmentResult(oldResultPath, newResultPath, contrastResultP
 
 if __name__ == "__main__":
     if len(sys.argv) == 4:
-        print "start contrusting..."
+        print "start contrasting..."
         # get path
         contrastNewAndOldSegmentResult(sys.argv[1], sys.argv[2], sys.argv[3])
     else:
-        print "input example 'python contrast.py new_result_path old_result_path contrust_result_path'"
+        print "input example 'python contrast.py new_result_path old_result_path contrast_result_path'"

@@ -1,10 +1,14 @@
 # -*- coding: UTF-8 -*-
-
+"""
+@filename: rmTab.py
+@description: remove \t in file "sys.argv[1]" and output to "sys.argv[2]"
+@author: lingosail-zhangpeihua
+@data: 2016-5-4
+@log: 1.used for optimize ltp-otcws using
+"""
 import re
 import sys
-'''
-    remove \t in file "sys.argv[1]" and output to "sys.argv[2]"
-'''
+
 if __name__ == "__main__":
     if len(sys.argv) == 3:
         in_path = sys.argv[1]
