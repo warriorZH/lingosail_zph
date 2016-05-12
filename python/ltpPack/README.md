@@ -15,6 +15,7 @@
 
 > 调用格式：
 >> `python contrast.py old_result_path new_result_path contrast_result_path`
+
 ***
 
 [readme](https://github.com/warriorZH/lingosail_zph/blob/master/python/ltpPack/README.md)
